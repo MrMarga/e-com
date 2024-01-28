@@ -109,8 +109,13 @@
                                     </div>
                                     <div class="card-footer d-flex justify-content-between bg-light border">
                                         <a href="{% url 'detail' product.pid %}"  class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                                    </div>
+                                        <input type="hidden" class="product-pid-{{product.id}}" value="{{product.pid}}">
+                                        <input type="hidden" class="product-image-{{product.id}}" value="{{product.image.url}}">
+                                        <input type="hidden" class="product-id-{{product.id}}" value="{{product.id}}">
+                                        <input type="hidden" class="product-title-{{product.id}}" value="{{product.title}}"> 
+                                         <button href="" type="submit" class="add-to-cart-btn btn  btn-sm text-dark p-0" data-index="{{product.id}}" id="add-to-cart-btn">
+                                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>  
+                                      </div>
                                 </div>
                             </div>
                             {%endfor%}
